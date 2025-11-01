@@ -32,12 +32,10 @@ public class PlayerController : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-    // Método llamado por la acción 'Jump' del Input System
     public void OnJump(InputValue value)
     {
         if (value.isPressed && isGrounded)
         {
-            // Aplicar la fuerza de salto
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
         }
